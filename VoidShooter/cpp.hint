@@ -1,0 +1,4 @@
+// https://go.microsoft.com/fwlink/?linkid=865984
+#define FOREACHMODULES(fn) foreachModules([&](std::shared_ptr<IModule> module)fn);
+#define DEFAULT_MODULE_FN(fnname) { LOG_WARNING("Module function {} without defenition was called. Pointer: {}", #fnname, (void*)this); }
+#define INIT_MODULE(modulename) private: const sf::String moduleName = #modulename; public: virtual sf::String getModuleName() { return this->moduleName; }
